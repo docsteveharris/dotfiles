@@ -373,6 +373,14 @@ defaults write com.apple.commerce AutoUpdate -bool true
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
+# My edits                                                                 #
+###############################################################################
+defaults write com.apple.dock mineffect -string "scale"
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 

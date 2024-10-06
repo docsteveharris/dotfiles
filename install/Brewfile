@@ -1,17 +1,17 @@
 # Mac App store - which then means Mac apps are included in brew bundle dump
 brew "mas"
-mas "1Password for Safari", id: 1569813296 
-mas "Bear", id: 1091189122 
-mas "com.kagimacOS.Kagi-Search", id: 1622835804 
-mas "DaisyDisk", id: 411643860 
-mas "Fantastical", id: 975937182 
-mas "iA Writer", id: 775737590 
-mas "NotePlan", id: 1505432629 
-mas "Save to Reader", id: 1640236961 
-mas "Shortery", id: 1594183810 
-mas "SnippetsLab", id: 1006087419 
-mas "Things", id: 904280696 
-mas "Yoink", id: 457622435 
+mas "1Password for Safari", id: 1569813296
+mas "Bear", id: 1091189122
+mas "com.kagimacOS.Kagi-Search", id: 1622835804
+mas "DaisyDisk", id: 411643860
+mas "Fantastical", id: 975937182
+mas "iA Writer", id: 775737590
+mas "NotePlan", id: 1505432629
+mas "Save to Reader", id: 1640236961
+mas "Shortery", id: 1594183810
+mas "SnippetsLab", id: 1006087419
+mas "Things", id: 904280696
+mas "Yoink", id: 457622435
 
 tap "homebrew/bundle"
 
@@ -45,6 +45,7 @@ brew "jq"
 brew "psgrep"
 brew "ripgrep"
 brew "the_silver_searcher"
+brew "zsh-autocomplete"
 
 # languages/tools
 brew "gh"
