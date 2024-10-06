@@ -1,6 +1,6 @@
-COMPUTER_NAME="Neo"
-LANGUAGES=(en nl)
-LOCALE="en_US@currency=EUR"
+COMPUTER_NAME="airm2"
+LANGUAGES=(en)
+LOCALE="en_GB@currency=GBP"
 MEASUREMENT_UNITS="Centimeters"
 SCREENSHOTS_FOLDER="${HOME}/Screenshots"
 
