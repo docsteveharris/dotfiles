@@ -19,16 +19,6 @@ fi
 
 PATH="$DOTFILES_DIR/bin:$PATH"
 
-# Autocomplete for ZSH
-# zsh autocomplete instead of compinit
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# Enable case-insensitive autocomplete
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# Autocompletions must be loaded before other zoxide
-# https://github.com/ajeetdsouza/zoxide
-# Autocompletions
-# autoload -Uz compinit && compinit
 
 # Source the dotfiles (order matters)
 for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,n,path,env,exports,alias,grep,prompt,completion,fix,zoxide}; do
