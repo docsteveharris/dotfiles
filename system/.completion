@@ -1,32 +1,24 @@
-BREW_PREFIX=$(brew --prefix)
+# 2024-10-15 switched to using fzf
 
-# Bash
-if [[ "$0" == *bash ]]; then
-    echo "This script is running in Bash"
-    if is-executable brew; then
-      . "$BREW_PREFIX/share/bash-completion/bash_completion"
-    fi
+# Press Tab to trigger fzf-based completion
+# Use Ctrl+T to search for files and directories
+# Use Ctrl+R to search command history
 
-    # Dotfiles
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
-    _dotfiles_completions() {
-    local cur="${COMP_WORDS[COMP_CWORD]}"
-      COMPREPLY=( $(compgen -W 'clean dock duti edit help macos test update' -- $cur ) );
-    }
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
 
-    complete -o default -F _dotfiles_completions dot
-    if is-executable git; then
-      . "$BREW_PREFIX/etc/bash_completion.d/git-completion.bash"
-    fi
-fi
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 
-
-# npm (https://docs.npmjs.com/cli/completion)
-
-if is-executable npm; then
-  . <(npm completion)
-fi
-
-# pnpm
-
-[ -f ~/.config/tabtab/bash/__tabtab.bash ] && . $HOME/.config/tabtab/bash/__tabtab.bash || true
+# fzf options
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
