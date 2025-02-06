@@ -24,3 +24,18 @@ shopt -s no_empty_cmd_completion
 # update the values of LINES and COLUMNS.
 
 shopt -s checkwinsize
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/Users/steve/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/Users/steve/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
