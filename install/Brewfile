@@ -1,68 +1,102 @@
-tap "lotyp/homebrew-formulae"
-
-# core/dotfiles
-brew "bats-core"
-brew "coreutils"
-brew "duti"
-brew "lotyp/formulae/dockutil"
-brew "nano"
-brew "stow"
-brew "thefuck"
-brew "tmux"
-brew "topgrade"
-
-# fs/network
-brew "bat"
-brew "croc"
-brew "httpie"
-brew "ssh-copy-id"
-brew "tree"
-brew "unar"
-brew "wget"
-brew "zoxide"
-
-# search/grep/diff
-brew "fd"
-brew "fzf"
-brew "git-delta"
-brew "gnu-sed"
-brew "grep"
-brew "jq"
-brew "psgrep"
-brew "ripgrep"
-brew "the_silver_searcher"
-
-# languages/tools
-brew "gh"
-brew "n"
-brew "python"
-brew "ruby"
-brew "rust"
-brew "shellcheck"
-
-# media
-brew "ffmpeg"
-brew "imagemagick"
-brew "uni"
+# Image format providing lossless and lossy compression for web images
 brew "webp"
-
-# misc
-brew "grip"
-
-# My Dev Environment
-brew "zellij"
-brew "viu"
-
-# nice to have
-brew "lsd"
+# Programmable completion for Bash 4.2+
+brew "bash-completion@2"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Bash Automated Testing System
+brew "bats-core"
+# Securely send things from one computer to another
+brew "croc"
+# More intuitive version of du in rust
 brew "dust"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Small git utilities
+brew "git-extras"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
+# GitHub Markdown previewer
+brew "grip"
+# Improved top (interactive process viewer)
 brew "htop"
-
-# mac app store (mas)
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Terminal file manager
+brew "lf"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Mac App Store command-line interface
 brew "mas"
-mas "1Password for Safari", id: 1569813296
-mas "Bear", id: 1091189122
-mas "com.kagimacOS.Kagi-Search", id: 1622835804
-mas "iA Writer", id: 775737590
-mas "Things", id: 904280696
-mas "Yoink", id: 457622435
+# Node version management
+brew "n"
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Shortcut for the 'ps aux | grep' idiom
+brew "psgrep"
+# SVG rendering tool and library
+brew "resvg"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Safe, concurrent, practical language
+brew "rust"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Add a public key to a remote machine's authorized_keys file
+brew "ssh-copy-id"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Terminal multiplexer
+brew "tmux"
+# Upgrade all the things
+brew "topgrade"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Command-line unarchiving tools supporting multiple formats
+brew "unar"
+# Unicode database query tool for the command-line
+brew "uni"
+# Simple terminal image viewer written in Rust
+brew "viu"
+# Internet file retriever
+brew "wget"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Tool for managing dock items.
+brew "lotyp/formulae/dockutil"

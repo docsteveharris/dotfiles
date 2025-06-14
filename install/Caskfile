@@ -1,15 +1,34 @@
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Plain-text editor for web pages, program source codes and more
+cask "coteditor"
 cask "font-fira-code"
 cask "font-hack"
 cask "font-iosevka"
+cask "font-symbols-only-nerd-font"
+cask "font-victor-mono"
+cask "font-victor-mono-nerd-font"
+# GIT client
 cask "fork"
-cask "google-chrome"
-cask "google-chrome@canary"
-cask "raycast"
-cask "slack"
-cask "spotify"
-cask "visual-studio-code"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-cask "kaleidoscope"
+# Web browser
+cask "google-chrome"
+# Web browser
+cask "google-chrome@canary"
+# Desktop automation application
 cask "hammerspoon"
+# Spot and merge differences in text and image files or folders
+cask "kaleidoscope"
+# App to manage software development and track bugs
 cask "linear-linear"
+# Multi-platform web browser
 cask "microsoft-edge"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Team communication and collaboration software
+cask "slack"
+# Music streaming service
+cask "spotify"
+# Open-source code editor
+cask "visual-studio-code"
