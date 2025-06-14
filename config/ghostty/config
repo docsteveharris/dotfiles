@@ -11,3 +11,9 @@ shell-integration-features = cursor,sudo,title
 copy-on-select = true
 confirm-close-surface = false
 
+# https://ghostty.org/docs/config/reference#macos-option-as-alt
+# values = true, false, left, and right
+# setting to right else you lose access to the alternative characters on num keys
+macos-option-as-alt = right
+
+

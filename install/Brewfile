@@ -49,6 +49,9 @@ brew "webp"
 # misc
 brew "grip"
 
+# My Dev Environment
+brew "zellij"
+
 # nice to have
 brew "lsd"
 brew "dust"
