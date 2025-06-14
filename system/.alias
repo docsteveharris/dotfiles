@@ -74,4 +74,5 @@ alias formatmd="remark --use remark-preset-webpro"
 # A better shell
 alias cat="bat"
 alias du="dust"
+alias top="htop"
 

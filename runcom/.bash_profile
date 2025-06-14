@@ -39,3 +39,4 @@ eval "$(dircolors -b "$DOTFILES_DIR"/system/.dir_colors)"
 
 unset CURRENT_SCRIPT SCRIPT_PATH DOTFILE
 export DOTFILES_DIR
+

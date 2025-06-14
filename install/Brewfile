@@ -51,10 +51,12 @@ brew "grip"
 
 # My Dev Environment
 brew "zellij"
+brew "viu"
 
 # nice to have
 brew "lsd"
 brew "dust"
+brew "htop"
 
 # mac app store (mas)
 brew "mas"
