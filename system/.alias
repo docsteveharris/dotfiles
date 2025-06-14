@@ -6,6 +6,8 @@ alias g="git"
 alias rr="rm -rf"
 alias mux="tmuxinator"
 alias zz='eval "$(zellij setup --generate-auto-start bash)"'
+alias nv="nvim"
+alias lg="lazygit"
 
 # Default options
 

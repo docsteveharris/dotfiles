@@ -1,6 +1,9 @@
 # .files
 
-These are my dotfiles. Take anything you want, but at your own risk.
+These are my dotfiles.
+They are a fork of the [webpro](https://github.com/webpro/dotfiles) dotfiles from Lars Kappert.
+
+---
 
 It mainly targets macOS systems (should install on e.g. Ubuntu as well for many tools, config and aliases etc).
 
