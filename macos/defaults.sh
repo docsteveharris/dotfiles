@@ -26,7 +26,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until this script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 # Computer & Host name                                                        #
@@ -60,7 +64,7 @@ sudo systemsetup -setusingnetworktime on
 ###############################################################################
 
 # Restart automatically if the computer freezes (Error:-99 can be ignored)
-sudo systemsetup -setrestartfreeze on 2> /dev/null
+sudo systemsetup -setrestartfreeze on 2>/dev/null
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
@@ -108,7 +112,7 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
 
 ###############################################################################
 # Keyboard & Input                                                            #
@@ -384,16 +388,18 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true # show developer menu
 
-# Switch to homebrew bash for better integration with ghostty
-# https://ghostty.org/docs/features/shell-integration
-# https://apple.stackexchange.com/a/479215
-chsh -s /opt/homebrew/bin/bash
+# As per reduce motion in accessibility
+defaults write com.apple.universalaccess reduceMotion -bool true
 
+# Stop reloading old windows on restart
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+defaults write com.apple.Safari ApplePersistenceIgnoreState YES
 
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal"; do
-  killall "${app}" &> /dev/null
+  killall "${app}" &>/dev/null
 done
