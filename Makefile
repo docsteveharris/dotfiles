@@ -84,6 +84,9 @@ brew-packages: brew
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
 
+mas-apps: brew
+	brew bundle --file=$(DOTFILES_DIR)/install/MASfile || true
+
 vscode-extensions: cask-apps
 	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
 
