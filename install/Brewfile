@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "lotyp/homebrew-formulae"
 
 # core/dotfiles
@@ -49,3 +48,12 @@ brew "webp"
 
 # misc
 brew "grip"
+
+# mac app store (mas)
+brew "mas"
+mas "1Password for Safari", id: 1569813296
+mas "Bear", id: 1091189122
+mas "com.kagimacOS.Kagi-Search", id: 1622835804
+mas "iA Writer", id: 775737590
+mas "Things", id: 904280696
+mas "Yoink", id: 457622435

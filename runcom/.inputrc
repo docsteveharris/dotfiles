@@ -28,8 +28,12 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
+# TAB shows the list of possible commands
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
+# Alternative (uncomment next 2 lines)
+# TAB: menu-complete
+#"\e[Z": menu-complete-backward
 
 # Filtered history search
 "\e[A": history-search-backward

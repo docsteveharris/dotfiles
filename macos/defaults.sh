@@ -1,4 +1,4 @@
-COMPUTER_NAME="Neo"
+COMPUTER_NAME="m4"
 LANGUAGES=(en nl)
 LOCALE="en_US@currency=EUR"
 MEASUREMENT_UNITS="Centimeters"
@@ -138,6 +138,9 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Keyboard navigation (in menus)
+defaults write -g AppleKeyboardUIMode -bool TRUE
+
 ###############################################################################
 # Trackpad, mouse, Bluetooth accessories                                      #
 ###############################################################################
@@ -255,7 +258,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock launchanim -bool false
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -371,6 +374,15 @@ defaults write com.apple.commerce AutoUpdate -bool true
 
 # Allow the App Store to reboot machine on macOS updates
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
+
+###############################################################################
+# Extras                                                                      #
+###############################################################################
+defaults write com.apple.dock mineffect -string "scale"
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true # show developer menu
 
 ###############################################################################
 # Kill affected applications                                                  #
