@@ -49,6 +49,10 @@ brew "webp"
 # misc
 brew "grip"
 
+# nice to have
+brew "lsd"
+brew "dust"
+
 # mac app store (mas)
 brew "mas"
 mas "1Password for Safari", id: 1569813296

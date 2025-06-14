@@ -33,11 +33,11 @@ LS_COLORIZED=$(is-supported "ls --color" --color -G)
 LS_TIMESTYLEISO=$(is-supported "ls --time-style=long-iso" --time-style=long-iso)
 LS_GROUPDIRSFIRST=$(is-supported "ls --group-directories-first" --group-directories-first)
 
-alias l="ls -lahA $LS_COLORIZED $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
-alias ll="ls -lA $LS_COLORIZED"
-alias lt="ls -lhAtr $LS_COLORIZED $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
-alias ld="ls -ld $LS_COLORIZED */"
-alias lp="stat -c '%a %n' *"
+alias ls="lsd"
+alias l="ls -l"
+alias ll="ls -la"
+alias la="ls -a"
+alias lt='ls --tree'
 
 unset LS_COLORIZED LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
@@ -69,3 +69,8 @@ alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 alias grip="grip --browser --pass=$GITHUB_TOKEN"
 alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
 alias formatmd="remark --use remark-preset-webpro"
+
+# A better shell
+alias cat="bat"
+alias du="dust"
+

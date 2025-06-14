@@ -1,0 +1,13 @@
+# Ghostty config - minimal but sensible
+theme = "Monokai Pro"
+font-family = "Victor Mono"
+font-size = 12
+
+# Shell integration
+shell-integration = bash
+shell-integration-features = cursor,sudo,title
+
+# Quality of life
+copy-on-select = true
+confirm-close-surface = false
+

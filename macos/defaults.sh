@@ -384,6 +384,12 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true # show developer menu
 
+# Switch to homebrew bash for better integration with ghostty
+# https://ghostty.org/docs/features/shell-integration
+# https://apple.stackexchange.com/a/479215
+chsh -s /opt/homebrew/bin/bash
+
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
