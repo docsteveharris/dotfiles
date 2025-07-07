@@ -10,8 +10,12 @@ alias v="y"
 alias vv="zellij"
 alias vvv="zellij --layout lazyvim"
 
+alias lz="zellij"
 alias lv="nvim"
 alias lg="lazygit"
+
+# https://github.com/randy3k/radian
+alias r="radian"
 
 # Default options
 

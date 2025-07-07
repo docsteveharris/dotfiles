@@ -279,6 +279,9 @@ defaults write com.apple.dock wvous-br-corner -int 0
 # Don't show recently used applications in the Dock
 defaults write com.Apple.Dock show-recents -bool false
 
+# Single application mode
+defaults write com.apple.dock single-app -bool true
+
 ###############################################################################
 # Mail                                                                        #
 ###############################################################################
@@ -395,6 +398,12 @@ defaults write com.apple.universalaccess reduceMotion -bool true
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 defaults write com.apple.Safari ApplePersistenceIgnoreState YES
+
+###############################################################################
+# Keyboard shortcuts                                                                      #
+###############################################################################
+defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Archive" "^e"
+defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Save Attachments..." "~@s"
 
 ###############################################################################
 # Kill affected applications                                                  #

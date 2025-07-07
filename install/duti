@@ -1,0 +1,7 @@
+com.microsoft.Word .doc all
+com.microsoft.Word .docx all
+com.microsoft.Excel .xls all
+com.microsoft.Excel .csv all
+com.microsoft.Excel .tsv all
+com.microsoft.Excel .xlsx all
+
