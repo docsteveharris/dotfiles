@@ -282,6 +282,9 @@ defaults write com.Apple.Dock show-recents -bool false
 # Single application mode
 defaults write com.apple.dock single-app -bool true
 
+# Minimise windows into the application window
+defaults write com.apple.dock minimize-to-application -bool true
+
 ###############################################################################
 # Mail                                                                        #
 ###############################################################################
