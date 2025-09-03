@@ -1,4 +1,6 @@
-BREW_PREFIX=$(brew --prefix)
+if [ -z "$HOMEBREW_PREFIX" ] && is-executable brew; then
+  HOMEBREW_PREFIX=$(brew --prefix)
+fi
 
 # Bash
 
@@ -18,8 +20,12 @@ complete -o default -F _dotfiles_completions dot
 
 # tmux
 
-if is-executable brew; then
-  . "$BREW_PREFIX/etc/bash_completion.d/tmux"
+if is-executable tmux; then
+  if [ -f "/usr/share/bash-completion/completions/tmux" ]; then
+    . "/usr/share/bash-completion/completions/tmux"
+  elif [ -n "$HOMEBREW_PREFIX" ] && [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/tmux" ]; then
+    . "$HOMEBREW_PREFIX/etc/bash_completion.d/tmux"
+  fi
 fi
 
 # npm (https://docs.npmjs.com/cli/completion)
@@ -31,7 +37,11 @@ fi
 # Git
 
 if is-executable git; then
-  . "$BREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+  if [ -f "/usr/share/git/completion/git-completion.bash" ]; then
+    . "/usr/share/git/completion/git-completion.bash"
+  elif [ -n "$HOMEBREW_PREFIX" ] && [ -f "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
+    . "$HOMEBREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+  fi
 fi
 
 # pnpm (https://pnpm.io/completion)
