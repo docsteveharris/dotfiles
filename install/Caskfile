@@ -1,34 +1,49 @@
-# Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Plain-text editor for web pages, program source codes and more
+cask "1password-cli"
+cask "acorn"
+cask "adobe-acrobat-reader"
+cask "beekeeper-studio"
+cask "chronosync"
+cask "citrix-workspace"
+cask "cmake-app"
 cask "coteditor"
+cask "daisydisk"
+cask "fantastical"
+cask "fmail3"
 cask "font-fira-code"
+cask "font-fira-sans"
 cask "font-hack"
 cask "font-iosevka"
 cask "font-symbols-only-nerd-font"
 cask "font-victor-mono"
 cask "font-victor-mono-nerd-font"
-# GIT client
 cask "fork"
-# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Web browser
 cask "google-chrome"
-# Web browser
 cask "google-chrome@canary"
-# Desktop automation application
 cask "hammerspoon"
-# Spot and merge differences in text and image files or folders
+cask "hazel"
+cask "ia-presenter"
+cask "jordanbaird-ice"
 cask "kaleidoscope"
-# App to manage software development and track bugs
 cask "linear-linear"
-# Multi-platform web browser
 cask "microsoft-edge"
-# Control your tools with a few keystrokes
+cask "mountain-duck"
+cask "onyx"
+cask "orion"
 cask "raycast"
-# Team communication and collaboration software
+cask "reader"
+cask "rstudio"
+cask "setapp"
+cask "skim"
+cask "slab"
 cask "slack"
-# Music streaming service
 cask "spotify"
-# Open-source code editor
+cask "superduper"
+cask "thingsmacsandboxhelper"
+cask "transmit"
 cask "visual-studio-code"
+cask "whatsapp"
+cask "zettlr"
+cask "zoom"
+cask "zotero"

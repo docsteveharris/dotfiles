@@ -1,11 +1,20 @@
 mas "1Password for Safari", id: 1569813296
 mas "Bear", id: 1091189122
+mas "CloudMounter", id: 1130254674
+mas "Day Progress", id: 6450280202
+mas "Flow", id: 1423210932
+mas "Folder Quick Look", id: 6753110395
 mas "iA Writer", id: 775737590
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Things", id: 904280696
-mas "Yoink", id: 457622435
+mas "Proton Pass for Safari", id: 6502835663
+mas "Raycast Companion", id: 6738274497
 mas "Reeder", id: 6475002485
-mas "Day Progress", id: 6450280202
+mas "Save to Raindrop.io", id: 1549370672
+mas "Save to Reader", id: 1640236961
+mas "SingleFile", id: 6444322545
+mas "Things", id: 904280696
+mas "Tot", id: 1491071483
+mas "Yoink", id: 457622435
