@@ -1,14 +1,29 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "8f1d971"
+rev = "eaf6920"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "eaf6920"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "3f8c863"
+hash = "87b9233a74325e95011670ed20bbd0d4"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-latte"
-rev = "d04a298"
-hash = "a4d508772dc7b20d739a2f9a1d2d396f"
+rev = "3edeb49"
+hash = "31f2ba594080bfc2a68d054101cdc5f1"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-macchiato"
-rev = "d04a298"
-hash = "e6c5beeb1da3199355734273ee452a7f"
+rev = "3edeb49"
+hash = "4127d9d6c96862ed96a7a64b3973a5af"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "5f56364"
+hash = "c0bf69ad2c44005892d586e9693993c6"

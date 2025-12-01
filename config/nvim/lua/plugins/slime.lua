@@ -9,6 +9,7 @@
 --     }
 --   end,
 -- }
+
 return {
   -- vim-slime for REPL integration
   {
@@ -23,7 +24,7 @@ return {
         relative_move_back = true,
       }
 
-      vim.g.slime_dont_ask_default = 1
+      -- vim.g.slime_dont_ask_default = 1
 
       -- Key mappings
       vim.keymap.set("n", "<leader>r", "<Plug>SlimeLineSend", { desc = "Send line to REPL" })

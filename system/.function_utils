@@ -1,0 +1,25 @@
+# Bash scripts
+# Automatically run by .bash_profile (as in all .function_* files are)
+
+
+# Pandoc docx to clean markdown
+docx2md() {
+  in="$1"
+  if [ -z "$in" ]; then
+      echo "Usage: docx2md input.docx [output.md]" >&2
+      return 1
+  fi
+
+  # Default output: same name with .md
+  out="${2:-${in%.docx}.md}"
+
+  pandoc "$in" \
+      --from=docx \
+      --to=markdown+smart+pipe_tables+backtick_code_blocks \
+      --wrap=none \
+      --reference-links \
+      --extract-media=./media \
+      --output="$out"
+
+}
+
