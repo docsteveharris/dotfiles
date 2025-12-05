@@ -1,0 +1,8 @@
+# Explicitly set path else sees system bash at /usr/bin/bash
+PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+eval "$(fzf --bash)"
+
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | xsel --clipboard --input)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"

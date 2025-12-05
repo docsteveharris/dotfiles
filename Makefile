@@ -16,7 +16,8 @@ all: $(OS)
 
 macos: sudo core-macos packages link duti bun
 
-linux: core-linux link bun
+linux: core-linux link bun  ## Linux specific actions
+	@echo "Now call 'make uclh' if you are on a UCLH devbox"
 
 core-macos: brew bash git npm
 
@@ -24,6 +25,28 @@ core-linux:
 	apt-get update
 	apt-get upgrade -y
 	apt-get dist-upgrade -f
+
+# UCLH section for working with devbox etc
+# ----------------------------------------
+.PHONY: help
+
+help: ## Show this help
+	@echo "You may need to call sudo make depending on your privileges"
+	@echo "Available targets:"
+	@grep -E '^[a-zA-Z0-9_.-]+:.*##' $(MAKEFILE_LIST) | sed -E 's/^([a-zA-Z0-9_.-]+):.*##[[:space:]]*(.*)/\1\t\2/'
+
+uclh: core-uclh ## UCLH specific actions
+	@echo "Welcome to UCLH. Ready to make?"
+
+core-uclh: core-linux link brew-packages-uclh bash git julia
+	mv -v $(HOME)/.bashrc $(HOME)/.bashrc.bak
+	mv -v $(HOME)/.bash_profile $(HOME)/.bash_profile.bak
+	stow -t "$(HOME)" uclh # revert to UCLH bash profile
+	git config --global --unset-all credential.helper # remove osxkeychain
+
+brew-packages-uclh: brew
+	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile.uclh || true
+# ----------------------------------------
 
 stow-macos: brew
 	is-executable stow || brew install stow
@@ -100,7 +123,10 @@ duti:
 	duti -v $(DOTFILES_DIR)/install/duti
 
 bun:
-  curl -fsSL https://bun.sh/install | bash
+	curl -fsSL https://bun.sh/install | bash
+
+julia:
+	curl -fsSL https://install.julialang.org | sh
 
 test:
 	bats test

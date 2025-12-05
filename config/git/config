@@ -15,9 +15,6 @@
 	pager = delta
 	ignorecase = false
 
-[credential]
-	helper = osxkeychain
-
 [pull]
 	rebase = true
 
@@ -112,3 +109,5 @@
 
 [advice]
 	detachedHead = false
+[credential]
+	helper = store

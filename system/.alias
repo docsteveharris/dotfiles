@@ -1,7 +1,7 @@
 # My key shortcuts
 # ----------------
-# yazi (also y) but use 'nn' for navigator
-alias nn="y"
+# yazi  but use 'nn' for navigator
+alias nn="y" # y is the shell wrapper - see .fzf.macos etc
 # zellij
 alias zz="zellij a casper"
 # lazyvim
