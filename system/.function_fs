@@ -1,3 +1,9 @@
+# fzf into directory; depends on fd and fzf installs
+
+cf() {
+  cd "$(fd --type d --hidden --exclude .git | fzf)"
+}
+
 # Create a new directory and enter it
 
 mk() {
