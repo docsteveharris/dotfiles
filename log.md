@@ -1,4 +1,9 @@
 # Log
+Running log in reverse chronological order
+
+## 2025-12-05
+uclh
+setting up separate directory structure
 
 ## 2025-12-01
 
