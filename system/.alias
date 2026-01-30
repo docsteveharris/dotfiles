@@ -22,7 +22,7 @@ alias _="sudo"
 alias g="git"
 alias rr="rm -rf"
 alias mux="tmuxinator"
-
+alias venva="source .venv/bin/activate"
 
 # Default options
 
