@@ -1,11 +1,23 @@
+# --- Core Productivity (The "Nice to haves") ---
+brew "bat"                # Better 'cat' (Brew version provides 'bat' binary)
+brew "fd"                 # Better 'find' (Brew version provides 'fd' binary)
+brew "lsd"                # Better 'ls'
+brew "dust"               # Better 'du'
+brew "duf"                # Better 'df' (Optional, but recommended)
+brew "ripgrep"            # Better 'grep' (Brew version is often newer than apt)
+brew "fzf"                # Fuzzy finder
+brew "zoxide"             # Smarter 'cd'
+brew "git-delta"          # Better git diffs
+brew "thefuck"            # Fix typos
+brew "tldr"               # Better man pages
+brew "bottom"             # Better htop (btm)
+
+# --- Utilities ---
 brew "bash-completion@2"
 brew "coreutils"
 brew "bats-core"
 brew "croc"
-brew "dust"
-brew "fzf"
 brew "gh"
-brew "git-delta"
 brew "git-extras"
 brew "gnu-sed"
 brew "grep"
@@ -13,22 +25,29 @@ brew "grip"
 brew "htop"
 brew "httpie"
 brew "lazygit"
-brew "lf"
-brew "lsd"
-brew "n"
+# brew "lf"               # terminal file manager (but prefer yazi)
+brew "jq"                 # JSON processor
+brew "yq"                 # YAML processor
 brew "nano"
 brew "pandoc"
 brew "pipx"
 brew "poppler"
-brew "psgrep"
 brew "shellcheck"
 brew "ssh-copy-id"
 brew "the_silver_searcher"
-brew "thefuck"
 brew "tmux"
-brew "topgrade"
 brew "tree"
 brew "unar"
 brew "uni"
-brew "viu"
-brew "zoxide"
+brew "viu"                # terminal image viewer
+# brew "saulpw/vd/visidata"
+
+# --- Libraries ---
+# brew "libpng"
+# brew "webp"
+
+# --- Still Removed (Keep removed!) ---
+# brew "neovim"   -> We installed unstable PPA (Better)
+# brew "zellij"   -> We installed binary (Faster)
+# brew "yazi"     -> We installed binary (Faster)
+# brew "python"   -> Use system python (Faster)
