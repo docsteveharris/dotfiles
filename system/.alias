@@ -9,19 +9,19 @@ alias vv="nvim"
 alias gg="lazygit"
 
 # https://github.com/randy3k/radian
-alias rr="radian"
+# alias rr="radian"
 
 # A better shell
-alias cat="bat"
-alias du="dust"
-alias top="htop"
+command -v lsd >/dev/null 2>&1 && alias cat="bat"
+command -v lsd >/dev/null 2>&1 && alias du="dust"
+command -v lsd >/dev/null 2>&1 && alias top="htop"
 
 # Shortcuts
 alias reload="source ~/.bash_profile"
 alias _="sudo"
 alias g="git"
 alias rr="rm -rf"
-alias mux="tmuxinator"
+command -v lsd >/dev/null 2>&1 && alias mux="tmuxinator"
 alias venva="source .venv/bin/activate"
 
 # Default options
@@ -68,10 +68,10 @@ alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is link
 
 # p/npm
 
-alias b="bun"
-alias p="pnpm"
-alias ncu="npm-check-updates --interactive"
-alias ncuw="npm-check-updates --interactive --root --workspaces"
+command -v lsd >/dev/null 2>&1 && alias b="bun"
+command -v lsd >/dev/null 2>&1 && alias p="pnpm"
+command -v lsd >/dev/null 2>&1 && alias ncu="npm-check-updates --interactive"
+command -v lsd >/dev/null 2>&1 && alias ncuw="npm-check-updates --interactive --root --workspaces"
 
 # Network
 

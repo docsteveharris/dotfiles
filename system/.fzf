@@ -1,4 +1,23 @@
-eval "$(fzf --bash)"
+# fzf (portable init)
+if command -v fzf >/dev/null 2>&1; then
+    # Debian/Ubuntu package locations (common)
+    if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+        . /usr/share/doc/fzf/examples/key-bindings.bash
+    fi
+    if [ -f /usr/share/doc/fzf/examples/completion.bash ]; then
+        . /usr/share/doc/fzf/examples/completion.bash
+    fi
+
+    # Homebrew locations (macOS/Linuxbrew)
+    if command -v brew >/dev/null 2>&1; then
+        fzf_prefix="$(brew --prefix fzf 2>/dev/null || true)"
+        if [ -n "$fzf_prefix" ]; then
+            [ -f "$fzf_prefix/shell/key-bindings.bash" ] && . "$fzf_prefix/shell/key-bindings.bash"
+            [ -f "$fzf_prefix/shell/completion.bash" ] && . "$fzf_prefix/shell/completion.bash"
+        fi
+        unset fzf_prefix
+    fi
+fi
 
 export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
