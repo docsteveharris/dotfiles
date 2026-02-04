@@ -52,11 +52,10 @@ LS_TIMESTYLEISO=$(is-supported "ls --time-style=long-iso" --time-style=long-iso)
 LS_GROUPDIRSFIRST=$(is-supported "ls --group-directories-first" --group-directories-first)
 
 # NB swap ls for lsd
-alias ls="lsd"
-alias l="ls -l"
-alias ll="ls -la"
-alias la="ls -a"
-alias lt='ls --tree'
+alias l="lsd -l"
+alias ll="lsd -la"
+alias la="lsd -a"
+alias lt='lsd --tree'
 
 unset LS_COLORIZED LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 

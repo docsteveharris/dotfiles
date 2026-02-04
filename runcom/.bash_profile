@@ -1,75 +1,52 @@
 # If not running interactively, don't do anything
-
 [ -z "$PS1" ] && return
 
-# Resolve DOTFILES_DIR (assuming ~/.dotfiles on distros without readlink and/or $BASH_SOURCE/$0)
+# Resolve DOTFILES_DIR
 CURRENT_SCRIPT=$BASH_SOURCE
 
 if [[ -n $CURRENT_SCRIPT && -x readlink ]]; then
   SCRIPT_PATH=$(readlink -n $CURRENT_SCRIPT)
-  DOTFILES_DIR="${PWD}/$(dirname $(dirname $SCRIPT_PATH))"
+  DOTFILES_DIR="${PWD}/$(dirname "$(dirname "$SCRIPT_PATH")")"
 elif [ -d "$HOME/.dotfiles" ]; then
   DOTFILES_DIR="$HOME/.dotfiles"
 else
-  echo "Unable to find dotfiles, exiting."
+  echo "Unable to find dotfiles; continuing with default shell."
   return
 fi
 
 # Make utilities available
-
 PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source the dotfiles (order matters)
-
 for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,n,path,env,exports,alias,fzf,grep,prompt,completion,fix,zoxide}; do
-  . "$DOTFILE"
+  # Guard missing globs/files (prevents noisy errors)
+  [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
 if is-macos; then
   for DOTFILE in "$DOTFILES_DIR"/system/.{env,alias,function}.macos; do
-    . "$DOTFILE"
+    [ -f "$DOTFILE" ] && . "$DOTFILE"
   done
 fi
 
-# Set LSCOLORS
-
-eval "$(dircolors -b "$DOTFILES_DIR"/system/.dir_colors)"
+# Set LSCOLORS (dircolors may not exist everywhere)
+if command -v dircolors >/dev/null 2>&1 && [ -f "$DOTFILES_DIR/system/.dir_colors" ]; then
+  eval "$(dircolors -b "$DOTFILES_DIR/system/.dir_colors")"
+fi
 
 # Wrap up
-
 unset CURRENT_SCRIPT SCRIPT_PATH DOTFILE
 export DOTFILES_DIR
 
-
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-case ":$PATH:" in
-    *:/Users/steve/.juliaup/bin:*)
-        ;;
-
-    *)
-        export PATH=/Users/steve/.juliaup/bin${PATH:+:${PATH}}
-        ;;
-esac
-
-# <<< juliaup initialize <<<
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/steve/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/steve/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/steve/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/steve/miniconda3/bin:$PATH"
-    fi
+# juliaup (portable; no hardcoded /Users paths)
+if [ -d "$HOME/.juliaup/bin" ]; then
+  case ":$PATH:" in
+  *:"$HOME/.juliaup/bin":*) ;;
+  *) export PATH="$HOME/.juliaup/bin${PATH:+:${PATH}}" ;;
+  esac
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-
-. "$HOME/.local/share/../bin/env"
+# Local environment hook (optional)
+if [ -f "$HOME/.local/bin/env" ]; then
+  . "$HOME/.local/bin/env"
+fi
