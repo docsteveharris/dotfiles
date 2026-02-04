@@ -1,4 +1,8 @@
-BREW_PREFIX=$(brew --prefix)
+# Shell completion
+BREW_PREFIX=""
+if command -v brew >/dev/null 2>&1; then
+    BREW_PREFIX="$(brew --prefix 2>/dev/null || true)"
+fi
 
 # Bash
 
@@ -30,8 +34,12 @@ fi
 
 # Git
 
-if is-executable git; then
-  . "$BREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+if [ -n "$BREW_PREFIX" ] && [ -f "$BREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
+    . "$BREW_PREFIX/etc/bash_completion.d/git-completion.bash"
+elif [ -f /usr/share/bash-completion/completions/git ]; then
+    . /usr/share/bash-completion/completions/git
+elif [ -f /etc/bash_completion.d/git-completion.bash ]; then
+    . /etc/bash_completion.d/git-completion.bash
 fi
 
 # pnpm
