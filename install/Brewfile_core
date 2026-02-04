@@ -31,7 +31,7 @@ brew "yq"                 # YAML processor
 brew "nano"
 brew "pandoc"
 brew "pipx"
-brew "poppler"
+# brew "poppler"          # poppler-utils instead via apt-get
 brew "shellcheck"
 brew "ssh-copy-id"
 brew "the_silver_searcher"

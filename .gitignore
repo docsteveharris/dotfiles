@@ -2,5 +2,4 @@
 *.lock.json
 __pycache__
 system/.custom
-system/.exports
 config/lazygit/temp_lazygit.tar.gz
