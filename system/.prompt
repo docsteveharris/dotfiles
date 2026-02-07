@@ -4,6 +4,14 @@ _bash_prompt_config() {
 
   local USER_SYMBOL="\u"
   local HOST_SYMBOL="\h"
+  #
+  # Badges (Nerd Font). Override via env if you want:
+  #   PROMPT_BADGE_HOST, PROMPT_BADGE_CONTAINER
+  local BADGE_HOST="${PROMPT_BADGE_HOST:-}"        # laptop
+  local BADGE_CONTAINER="${PROMPT_BADGE_CONTAINER:-󰡨}" # docker
+  local LABEL_HOST="${PROMPT_LABEL_HOST:-MAC}"
+  local LABEL_CONTAINER="${PROMPT_LABEL_CONTAINER:-DOK}"
+
   local ESC_OPEN="\["
   local ESC_CLOSE="\]"
 
@@ -50,7 +58,27 @@ _bash_prompt_config() {
 
   # Expose the variables we need in prompt command
   P_USER=${BRIGHT_GREEN}${USER_SYMBOL}
-  P_HOST=${CYAN}${HOST_SYMBOL}
+
+  # P_HOST=${CYAN}${HOST_SYMBOL}
+  # Detect container and choose badge/label
+  local IN_CONTAINER=""
+  if [ -f /.dockerenv ] || grep -qaE '(docker|containerd)' /proc/1/cgroup 2>/dev/null; then
+    IN_CONTAINER=1
+  fi
+
+  # if [ -n "$IN_CONTAINER" ]; then
+  #   # Container: show docker badge (optionally keep a short hostname too)
+  #   P_HOST=${CYAN}${BADGE_CONTAINER}
+  # else
+  #   # Host: show laptop badge + hostname (e.g. m4)
+  #   P_HOST=${CYAN}${BADGE_HOST}
+  # fi
+  if [ -n "$IN_CONTAINER" ]; then
+    P_HOST=${BRIGHT_YELLOW}"[${LABEL_CONTAINER}]"${CYAN}"${BADGE_CONTAINER}"
+  else
+    P_HOST=${BRIGHT_BLUE}"[${LABEL_HOST}]"${CYAN}"${BADGE_HOST}"
+  fi
+
   P_WHITE=${WHITE}
   P_GREEN=${BRIGHT_GREEN}
   P_YELLOW=${YELLOW}
