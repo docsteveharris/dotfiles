@@ -1,3 +1,7 @@
+# Mac os specific versions of standard tool chain
+
+alias zz="zellij a casper"
+
 # Copy pwd to clipboard
 
 alias cpwd="pwd|tr -d '\n'|pbcopy"
