@@ -1,16 +1,22 @@
 # .files
 
 These are my dotfiles.
-They are a fork of the [webpro](https://github.com/webpro/dotfiles) dotfiles from Lars Kappert.
+
+- They were originally a fork of the [webpro](https://github.com/webpro/dotfiles) dotfiles from Lars Kappert. But now live at <https://github.com/docsteveharris/dotfiles.git> and refactored to work in a docker container.
 
 A list of notable changes
+
 - Brewfile, Caskfile etc. are direct dumps from `brew dump`. They lose all the nice commenting and layout, but are easier to update and regenerate.
 - I added an equivalent Mac App Store file (MASfile)
 - Created a runonce.sh file for things like changing the shell on mac os
+- Refactored to XDG pattern to work in a docker container (see <https://github.com/docsteveharris/jd>)
 
-TODO: fix runonce.sh implementation
+## TODOS
 
-NB: Original README below
+- TODO: fix runonce.sh implementation
+
+# Original README below
+
 ---
 
 It mainly targets macOS systems (should install on e.g. Ubuntu as well for many tools, config and aliases etc).
