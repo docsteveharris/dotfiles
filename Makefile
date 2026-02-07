@@ -19,7 +19,13 @@ all: $(OS)
 
 macos: sudo core-macos packages link duti bun
 
-linux: core-linux link bun
+linux:
+	ifdef GITHUB_ACTION
+		core-linux-ci link
+	else
+		core-linux link bun
+	endif
+
 
 core-macos: brew bash git npm
 
@@ -27,6 +33,22 @@ core-linux:
 	apt-get update
 	apt-get upgrade -y
 	apt-get dist-upgrade -f
+
+core-linux-ci:
+	apt-get update
+	apt-get install -y --no-install-recommends \
+		bash \
+		ca-certificates \
+		curl \
+		git \
+		make \
+		stow \
+		bats \
+		awk \
+		sed \
+		grep \
+		coreutils \
+		findutils
 
 stow-macos: brew
 	is-executable stow || brew install stow
