@@ -20,7 +20,7 @@ all: $(OS)
 
 LINUX_CORE := core-linux
 
-ifdef GITHUB_ACTION
+ifdef GITHUB_ACTIONS
 LINUX_CORE := core-linux-ci
 endif
 
@@ -63,7 +63,7 @@ stow-macos: brew
 
 
 sudo:
-ifndef GITHUB_ACTION
+ifndef GITHUB_ACTIONS
 	sudo -v
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 endif
@@ -92,7 +92,7 @@ brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 bash: brew
-ifdef GITHUB_ACTION
+ifdef GITHUB_ACTIONS
 	if ! grep -q bash $(SHELLS); then \
 		brew install bash bash-completion@2 pcre && \
 		echo $(shell which bash) | sudo tee -a $(SHELLS) && \

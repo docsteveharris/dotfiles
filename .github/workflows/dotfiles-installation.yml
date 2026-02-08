@@ -36,5 +36,11 @@ jobs:
       - name: Load & verify runcom setup
         run: source $HOME/.bash_profile
 
+      - name: Install test dependencies (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bats jq
+
       - name: Run tests
         run: make test
