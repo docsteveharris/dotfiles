@@ -33,19 +33,13 @@ jobs:
       - name: Install using Makefile
         run: |
           if [ "$RUNNER_OS" == "macOS" ]; then
-            make
+            make macos-ci
           else
             sudo make linux
           fi
 
       - name: Load & verify runcom setup
         run: source $HOME/.bash_profile
-
-      - name: Install test dependencies (Ubuntu)
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y bats
 
       - name: Run tests
         run: make test

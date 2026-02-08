@@ -17,9 +17,6 @@ export ACCEPT_EULA=Y
 
 all: $(OS)
 
-macos: sudo core-macos packages link duti bun
-
-core-macos: brew bash git npm
 
 LINUX_CORE := core-linux
 
@@ -44,17 +41,26 @@ core-linux-ci:
 		make \
 		stow \
 		bats \
+		jq \
 		awk \
 		sed \
 		grep \
 		coreutils \
 		findutils
 
+stow-linux: core-linux
+	is-executable stow || apt-get -y install stow
+
+
+macos: sudo core-macos packages link duti bun
+
+core-macos: brew bash git npm
+
+macos-ci: macos-test-deps stow-macos link
+
 stow-macos: brew
 	is-executable stow || brew install stow
 
-stow-linux: core-linux
-	is-executable stow || apt-get -y install stow
 
 sudo:
 ifndef GITHUB_ACTION
@@ -129,6 +135,9 @@ duti:
 
 bun:
 	curl -fsSL https://bun.sh/install | bash
+
+macos-test-deps: brew
+	brew install bats-core jq || true
 
 test:
 	bats test
