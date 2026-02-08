@@ -19,15 +19,15 @@ all: $(OS)
 
 macos: sudo core-macos packages link duti bun
 
-linux:
-	ifdef GITHUB_ACTION
-		core-linux-ci link
-	else
-		core-linux link bun
-	endif
-
-
 core-macos: brew bash git npm
+
+LINUX_CORE := core-linux
+
+ifdef GITHUB_ACTION
+LINUX_CORE := core-linux-ci
+endif
+
+linux: $(LINUX_CORE) link bun
 
 core-linux:
 	apt-get update

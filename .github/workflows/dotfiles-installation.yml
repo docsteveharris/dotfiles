@@ -35,12 +35,11 @@ jobs:
           if [ "$RUNNER_OS" == "macOS" ]; then
             make
           else
-            sudo make
+            sudo make linux
           fi
 
       - name: Load & verify runcom setup
         run: source $HOME/.bash_profile
 
       - name: Run tests
-        if: startsWith(matrix.os, 'macos')
         run: make test
