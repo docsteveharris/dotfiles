@@ -10,10 +10,11 @@ curl -fsSL https://install.julialang.org | sh
 
 # Conda/Mamba
 # https://www.anaconda.com/docs/getting-started/miniconda/install#macos-terminal-installer
-curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
-bash ~/Miniconda3-latest-MacOSX-arm64.sh
+# curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+# bash ~/Miniconda3-latest-MacOSX-arm64.sh
 # accept all the defaults
-conda install -n base -c conda-forge mamba
+# conda install -n base -c conda-forge mamba
+# 2026-02-23 dropped as a system install; prefer uv and local envs
 
 # https://www.visidata.org/install/
 # https://github.com/saulpw/visidata/issues/2259#issuecomment-2648974959
