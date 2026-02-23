@@ -27,6 +27,8 @@ if is-macos; then
   for DOTFILE in "$DOTFILES_DIR"/system/.{env,alias,function}.macos; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
   done
+  # Add in the path to your julia dev box helper script
+  export PATH="$HOME/code/jd/scripts:$PATH"
 fi
 
 # Set LSCOLORS (dircolors may not exist everywhere)
