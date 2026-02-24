@@ -1,9 +1,13 @@
 # Log
 
+##  2026-02-24 19:36:54
+
+- switched from minifiles to yazi.nvim
+
 ## 2025-12-01 22:30:51
 
 Probably easier to get on and install kitty
-https://sw.kovidgoyal.net/kitty/overview/#other-keyboard-shortcuts
+<https://sw.kovidgoyal.net/kitty/overview/#other-keyboard-shortcuts>
 
 Now trying to set-up on UCLH but there are too many differences
 
@@ -14,7 +18,7 @@ sudo apt install imagemagick zoxide
 sudo apt install tree
 ```
 
-then switch to doing a yazi install as per https://yazi-rs.github.io/docs/installation/#binaries
+then switch to doing a yazi install as per <https://yazi-rs.github.io/docs/installation/#binaries>
 
 ```bash
 # ⚠️this doesn't work
@@ -73,14 +77,14 @@ Homebrew on Debian
 ```
 
 Next Zellij
-https://zellij.dev/documentation/installation.html
+<https://zellij.dev/documentation/installation.html>
 
 ```bash
 cargo install --locked zellij
 ```
 
 Next duckdb
-https://duckdb.org/install/?platform=linux&environment=cli
+<https://duckdb.org/install/?platform=linux&environment=cli>
 
 ```bash
 curl https://install.duckdb.org | sh
