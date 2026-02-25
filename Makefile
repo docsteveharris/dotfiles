@@ -1,5 +1,5 @@
 DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-XDG_PACKAGES := ghostty git lazygit nvim prettier tmux yazi zellij julia
+XDG_PACKAGES := ghostty git lazygit nvim prettier tmux yazi zellij
 
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-macos $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local) /home/linuxbrew/.linuxbrew)
@@ -70,7 +70,19 @@ endif
 
 packages: brew-packages cask-apps mas-apps node-packages rust-packages
 
-link: stow-$(OS)
+link-julia:
+	mkdir -p $(HOME)/.julia/config
+	cp $(DOTFILES_DIR)/config/julia/startup.jl \
+	   $(HOME)/.julia/config/startup.jl
+	mkdir -p $(HOME)/.julia/environments/dsbc
+	cp $(DOTFILES_DIR)/config/julia/environments/dsbc/Project.toml \
+	   $(HOME)/.julia/environments/dsbc/Project.toml
+
+unlink-julia:
+	rm -f $(HOME)/.julia/config/startup.jl
+	rm -f $(HOME)/.julia/environments/dsbc/Project.toml
+
+link: stow-$(OS) link-julia
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then \
 		mv -v $(HOME)/$$FILE{,.bak}; fi; done
 	stow -d "$(DOTFILES_DIR)" -t "$(HOME)" runcom
@@ -80,7 +92,7 @@ link: stow-$(OS)
 	mkdir -p $(HOME)/.local/runtime
 	chmod 700 $(HOME)/.local/runtime
 
-unlink: stow-$(OS)
+unlink: stow-$(OS) unlink-julia
 	stow -d "$(DOTFILES_DIR)" --delete -t "$(HOME)" runcom
 	for PKG in $(XDG_PACKAGES); do \
 		stow -d "$(DOTFILES_DIR)/config" --delete -t "$(HOME)" "$$PKG"; \

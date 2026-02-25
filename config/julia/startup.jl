@@ -67,10 +67,10 @@ end
 # are available in the bare REPL without polluting project environments.
 # When inside a project, the project's own versions always take precedence.
 #
-# To set up the @datasci env (once):
+# To set up the @dsbc env (once):
 #   julia --project=@datasci -e 'import Pkg; Pkg.add(["DuckDB","DataFrames","CSV"])'
-if "@datasci" ∉ LOAD_PATH
-    push!(LOAD_PATH, "@datasci")
+if "@dsbc" ∉ LOAD_PATH
+    push!(LOAD_PATH, "@dsbc")
 end
 
 # ── REPL utilities ────────────────────────────────────────────────────────────
