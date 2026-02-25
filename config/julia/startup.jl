@@ -29,7 +29,6 @@ ENV["JULIA_STACKTRACE_MINIMAL"] = 1
 # Essential for interactive development.
 try
     using Revise
-    Revise.async_steal_repl_backend()
 catch e
     @warn "Revise not available" exception=e
 end
