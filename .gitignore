@@ -4,3 +4,4 @@ __pycache__
 system/.custom
 config/lazygit/temp_lazygit.tar.gz
 config/nvim/.config/nvim/lazy-lock.json
+config/julia/environments/dsbc/Manifest.toml
