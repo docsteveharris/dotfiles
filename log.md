@@ -1,5 +1,9 @@
 # Log
 
+## 2026-02-25 12:32:16
+
+Now checking that julia is tracked in dotfiles, specifically startup.jl
+
 ##  2026-02-24 19:36:54
 
 - switched from minifiles to yazi.nvim

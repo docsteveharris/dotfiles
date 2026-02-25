@@ -1,5 +1,5 @@
 DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-XDG_PACKAGES := ghostty git lazygit nvim prettier tmux yazi zellij
+XDG_PACKAGES := ghostty git lazygit nvim prettier tmux yazi zellij julia
 
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-macos $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local) /home/linuxbrew/.linuxbrew)
