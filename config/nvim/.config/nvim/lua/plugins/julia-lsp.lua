@@ -1,12 +1,15 @@
--- Problems with Mason so need to independently manage LSP for julia
--- https://discourse.julialang.org/t/neovim-languageserver-jl-crashing-again/130273/3
--- and here https://github.com/neovim/nvim-lspconfig/blob/master/lsp/julials.lua
+-- julia-lsp.lua
+-- julials (LanguageServer.jl) is not installed in this environment.
+-- We use jetls instead (configured in jetls.lua).
+-- This file explicitly disables julials to suppress the "client quit" error.
+
 return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      vim.lsp.config("julials", {}),
-      vim.lsp.enable("julials"),
+      servers = {
+        julials = { enabled = false },
+      },
     },
   },
 }
