@@ -33,6 +33,7 @@ prepend-path "$N_PREFIX/bin"
 prepend-path "$HOME/.local/bin"
 prepend-path "$HOME/.julia/bin"
 prepend-path "/opt/pytools-venv/bin"
+prepend-path "$HOME/opt/pytools-venv/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
