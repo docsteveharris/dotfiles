@@ -13,6 +13,7 @@ shell-integration-features = cursor,sudo,title
 # Quality of life
 copy-on-select = true
 confirm-close-surface = false
+clipboard-paste-protection = false
 
 # https://ghostty.org/docs/config/reference#macos-option-as-alt
 # values = true, false, left, and right
