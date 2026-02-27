@@ -45,3 +45,23 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Print octal permissions for files
+function lso() {
+  local dir="${1:-.}"
+  if [[ "$(uname)" == "Darwin" ]]; then
+    # macOS - use ls -l and convert
+    ls -lAhd "$dir"/* "$dir"/.[^.]* 2>/dev/null | awk '{
+      perms = $1
+      file = $NF
+      # Convert rwx to octal: r=4, w=2, x=1
+      owner = (substr(perms,2,1)=="r"?4:0) + (substr(perms,3,1)=="w"?2:0) + (substr(perms,4,1)=="x"?1:0)
+      group = (substr(perms,5,1)=="r"?4:0) + (substr(perms,6,1)=="w"?2:0) + (substr(perms,7,1)=="x"?1:0)
+      other = (substr(perms,8,1)=="r"?4:0) + (substr(perms,9,1)=="w"?2:0) + (substr(perms,10,1)=="x"?1:0)
+      printf "%d%d%d %s\n", owner, group, other, file
+    }'
+  else
+    # Linux
+    stat -c '%a %n' "$dir"/* "$dir"/.[^.]* 2>/dev/null
+  fi
+}
+

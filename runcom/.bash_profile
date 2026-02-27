@@ -52,3 +52,10 @@ fi
 if [ -f "$HOME/.local/bin/env" ]; then
   . "$HOME/.local/bin/env"
 fi
+
+# fzf shell integration — pretty Ctrl-R history search, Ctrl-T file picker
+# Requires fzf 0.48+ (installed via GitHub releases in Docker image)
+# Also works with Homebrew fzf on macOS
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --bash)"
+fi

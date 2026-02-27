@@ -57,6 +57,7 @@ alias ll="lsd -la"
 alias la="lsd -a"
 alias lt='lsd --tree'
 
+
 unset LS_COLORIZED LS_TIMESTYLEISO LS_GROUPDIRSFIRST
 
 alias ..="cd .."
