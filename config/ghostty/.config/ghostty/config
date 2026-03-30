@@ -6,6 +6,10 @@ font-size = 14
 # theme = "catppuccin-frappe"
 theme = "tokyonight"
 
+# Shell
+command = /opt/homebrew/bin/bash --login
+
+
 # Shell integration
 shell-integration = bash
 shell-integration-features = cursor,sudo,title
@@ -14,6 +18,8 @@ shell-integration-features = cursor,sudo,title
 copy-on-select = true
 confirm-close-surface = false
 clipboard-paste-protection = false
+clipboard-read = allow
+clipboard-write = allow
 
 # https://ghostty.org/docs/config/reference#macos-option-as-alt
 # values = true, false, left, and right
