@@ -48,6 +48,11 @@ if [ -d "$HOME/.juliaup/bin" ]; then
   esac
 fi
 
+# Local secrets, never committed to the dotfiles repository
+if [ -f "$HOME/.secrets" ]; then
+  . "$HOME/.secrets"
+fi
+
 # Local environment hook (optional)
 if [ -f "$HOME/.local/bin/env" ]; then
   . "$HOME/.local/bin/env"
