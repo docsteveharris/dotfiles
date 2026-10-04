@@ -36,3 +36,17 @@ on = ["g", "u"]
 run = "plugin duckdb -ui"
 desc = "open with duckdb ui"
 
+# Jumplist
+# https://github.com/0xHouss/jumplist.yazi#usage
+# Inspired from vim's jumplist bindings
+[[manager.prepend_keymap]]
+on = [ "<C-o>"]
+run = "plugin jumplist -- --direction=back"
+desc = "Go back in jumplist"
+
+[[manager.prepend_keymap]]
+on = [ "<C-i>"]
+run = "plugin jumplist -- --direction=forward"
+desc = "Go forward in jumplist"
+
+

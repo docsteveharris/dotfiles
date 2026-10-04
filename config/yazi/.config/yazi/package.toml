@@ -13,6 +13,11 @@ use = "wylie102/duckdb"
 rev = "3f8c863"
 hash = "87b9233a74325e95011670ed20bbd0d4"
 
+[[plugin.deps]]
+use = "0xHouss/jumplist"
+rev = "789a66b"
+hash = "97a9509b0eca357d5f0a26f68949f7a1"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-latte"
 rev = "3edeb49"

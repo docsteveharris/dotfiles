@@ -3,6 +3,9 @@ require("full-border"):setup({
   type = ui.Border.PLAIN,
 })
 
+-- https://github.com/0xHouss/jumplist.yazi#usage
+require("jumplist"):setup()
+
 -- https://yazi-rs.github.io/docs/tips#symlink-in-status
 Status:children_add(function(self)
   local h = self._current.hovered
