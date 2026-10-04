@@ -1,6 +1,6 @@
 # Mac os specific versions of standard tool chain
 
-alias zz="zellij a casper"
+alias zzc="zellij a casper"
 
 # Copy pwd to clipboard
 
@@ -51,3 +51,7 @@ alias killos="killfinder && killdock && killmenubar"
 alias displays="system_profiler SPDisplaysDataType"
 alias cpu="sysctl -n machdep.cpu.brand_string"
 alias ram="top -l 1 -s 0 | grep PhysMem"
+
+# Mac specific apps
+# https://github.com/ryanlewis/things-cli
+alias th=things

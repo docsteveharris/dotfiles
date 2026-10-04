@@ -1,1 +1,2 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export BARTIB_FILE="/Users/steve/Library/Mobile Documents/iCloud~co~fluder~fsnotes/Documents/logs/activities.bartib"
