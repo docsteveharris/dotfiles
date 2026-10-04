@@ -7,3 +7,4 @@ config/nvim/.config/nvim/lazy-lock.json
 config/julia/environments/dsbc/Manifest.toml
 .secrets
 
+_context
