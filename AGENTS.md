@@ -11,12 +11,12 @@ Personal dotfiles for Steve's Mac (and Linux container) workstation: shell runco
 Read these before responding. Start with `manifest.yaml` to see what
 documents exist, then read the rest.
 
-- `_context/CONTEXT.md`    — project brief, stakeholders, open questions
-- `_context/GLOSSARY.md`   — acronyms, roles, organisations
-- `_context/MEMORY.md`     — decisions log; append new decisions here
+- `_context/CONTEXT.md` — project brief, stakeholders, open questions
+- `_context/GLOSSARY.md` — acronyms, roles, organisations
+- `_context/MEMORY.md` — decisions log; append new decisions here
 - `_context/manifest.yaml` — document index; read to know what files exist
-- `_context/docs/`         — converted documents, read on demand
-- `log.md`                 — human-maintained chronological change log (reverse chronological)
+- `_context/docs/` — converted documents, read on demand
+- \_context/LOG.md — human-maintained chronological change log (reverse chronological)
 
 ## Standing instructions
 

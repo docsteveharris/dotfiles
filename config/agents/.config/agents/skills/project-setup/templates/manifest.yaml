@@ -1,0 +1,28 @@
+# manifest.yaml
+# Single source of truth for all project documents.
+#
+# Two sections:
+#   documents: files that need conversion via convert.sh
+#              originals live in _converted/ after first processing
+#   readable:  files already in markdown/text; model reads directly via MCP
+#
+# Conversion rules (automatic, by extension):
+#   .docx        → pandoc --track-changes=all (preserves comments/edits)
+#   .pdf         → markitdown (body) + pdfannots second pass (*_annots.md)
+#   .md          → copied directly to docs/, added to readable: section
+#   .webloc etc  → skipped
+#   everything else → markitdown
+#
+# To convert:   bash _context/convert.sh
+# To add a doc: add entry here and re-run convert.sh
+
+documents:
+  # - src:   "_converted/filename.docx"
+  #   out:   "docs/filename.md"
+  #   desc:  "One-line description"
+  #   group: "workstream"
+
+readable:
+  # - path:  "subfolder/filename.md"
+  #   desc:  "One-line description"
+  #   group: "workstream"
